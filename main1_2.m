@@ -1,6 +1,6 @@
 
-sigma = 3;
-n=20;
+sigma = 1.5;
+n=5;
 fid = fopen('p1','r');
 [A,count]=fread(fid);
 
@@ -12,19 +12,23 @@ for i = 1:600
     end
 end
 img = uint8(img);
+img2 = img;
 % use gaussConv
-img = gaussConv(img,sigma,n);
+img = gaussConv(img,sigma,n); % 使用自己写的高斯滤波器
+
 
 % use imfilter
 filterByMatlab = fspecial('gaussian',[n n],sigma);
-img2 = imfilter(img,filterByMatlab,'conv');
+img2 = imfilter(img2,filterByMatlab,'conv');% img2 使用matlab的imfilter函数
 
 img = uint8(img);
 img2 = uint8(img2);
-subplot(2,1,1)
+
+% subplot(2,1,1)
 imshow(img) % show image
-subplot(2,1,2)
-imshow(img2)
+% subplot(2,1,2)
+% imshow(img2)
+
 str = ['pic1_2','.jpg'];
 imwrite(img,str)
 

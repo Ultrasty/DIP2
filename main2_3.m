@@ -7,7 +7,8 @@ for i = 1:600
     end
 end
 
-ordfilt2
+n = 3;
+img = ordfilt2(img,ceil(n*n/2),ones(n,n));
 img = uint8(img);
 imshow(img) % show image
 
