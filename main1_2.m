@@ -32,4 +32,6 @@ imshow(img) % show image
 str = ['pic1_2','.jpg'];
 imwrite(img,str)
 
+str = ['pic1_2_imfilter','.jpg'];
+imwrite(img2,str)
 sta = fclose(fid);

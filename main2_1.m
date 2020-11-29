@@ -7,12 +7,13 @@ for i = 1:600
     end
 end
 
-[img,message] = minFilter(img,3);
+[img,message] = minFilter(img,7);
 if isequal(message,'ÇëÊäÈëÆæÊı')
     message
 else
 img = uint8(img);
 imshow(img) % show image
+imwrite(img,'pic2_1_7.jpg')
 end
 
 
